@@ -13,6 +13,8 @@ music = False
 def set():
     global t
     rem = sd.askstring("Время напоминания", "ВВедите время напоминания в формате чч:мм(В 24 часовом формате)")
+
+
     if rem:
         try:
             hour = int(rem.split(":")[0])
@@ -23,6 +25,7 @@ def set():
             print(dt)
             t = dt.timestamp()
             print(t)
+            label.config(text=f"Напоминание на {hour:02}:{minute:02}")
         except Exception as e:
             mb.showerror("Ошибка", f"Произошла ошибка{e}")
 
