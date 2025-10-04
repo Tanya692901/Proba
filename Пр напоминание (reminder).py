@@ -4,7 +4,9 @@ from tkinter import simpledialog as sd
 import datetime
 import time
 import pygame
+
 t = 0
+
 
 def set():
     global t
@@ -20,7 +22,8 @@ def set():
             t = dt.timestamp()
             print(t)
         except Exception as e:
-            mb.showerror("Ошибка",f"Произошла ошибка{e}")
+            mb.showerror("Ошибка", f"Произошла ошибка{e}")
+
 
 def check():
     global t
@@ -36,6 +39,8 @@ def play_snd():
     pygame.mixer.init()
     pygame.mixer.music.load("reminder.mp3")
     pygame.mixer.music.play()
+
+
 window = Tk()
 window.title("Напоминание")
 label = Label(text="Установите напоминание")
@@ -44,5 +49,3 @@ set_buton = Button(text="Установить напоминание", command=s
 set_buton.pack()
 
 window.mainloop()
-
-
